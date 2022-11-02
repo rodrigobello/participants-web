@@ -1,16 +1,16 @@
 export interface BarChartData {
-  labels: string[],
+  labels: string[];
   datasets: {
-    label?: string,
-    backgroundColor?: string,
-    data: number[],
-  }[],
+    label?: string;
+    backgroundColor?: string;
+    data: number[];
+  }[];
 }
 
 export interface PieChartData {
-  labels: string[],
+  labels: string[];
   datasets: {
-    backgroundColor: string[],
-    data: number[],
-  }[],
+    backgroundColor: string[];
+    data: number[];
+  }[];
 }

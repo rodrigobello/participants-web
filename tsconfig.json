@@ -11,7 +11,18 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@participant/*": [
+          "./src/apps/participant/*"
+      ],
+      "@helpers/*": [
+        "./src/utils/helpers/*"
+      ],
+      "@utils/UI/*": [
+        "./src/utils/components/UI/*"
+      ],
+    },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

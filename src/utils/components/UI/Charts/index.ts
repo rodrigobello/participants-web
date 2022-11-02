@@ -1,13 +1,7 @@
-import BarChart from './BarChart.vue'
-import PieChart from './PieChart.vue'
-import { PieChartData, BarChartData } from './chart.types'
+import BarChart from "./BarChart.vue";
+import PieChart from "./PieChart.vue";
+import { PieChartData, BarChartData } from "./chart.types";
 
-export {
-  BarChart,
-  PieChart,
-}
+export { BarChart, PieChart };
 
-export type {
-  PieChartData,
-  BarChartData,
-}
+export type { PieChartData, BarChartData };
