@@ -4,7 +4,7 @@ export interface ParticipantObject {
    OrganisationId?: ObjectID;
    Status?: "Active" | "Pending" | "Withdrawn";
    OrganisationName?: string;
-   CreatedOn?: string;
+   CreatedOn: string;
    LegalEntityName?: string;
    CountryOfRegistration?: string;
    CompanyRegister?: string;
@@ -17,7 +17,7 @@ export interface ParticipantObject {
    AddressLine2?: string;
    City?: string;
    Postcode?: string;
-   Country?: string;
+   Country: string;
    ParentOrganisationReference?: string;
    AuthorisationServers?: AuthorisationServer[];
    OrgDomainClaims?: OrganisationAuthorityDomainClaim[];

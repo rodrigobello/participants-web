@@ -4,6 +4,8 @@ import { ParticipantObject } from './types/participant'
 import ParticipantsFilters from './components/ParticipantsFilters.vue'
 import ParticipantDetails from './components/ParticipantDetails.vue'
 import ParticipantsTable from './components/ParticipantsTable.vue'
+import ParticipantsCharts from './components/ParticipantsCharts.vue'
+import { TransitionRoot } from '@headlessui/vue'
 
 const data = reactive<{
   participants: ParticipantObject[],
@@ -86,18 +88,27 @@ const filteredParticipants = computed((): ParticipantObject[] =>
       </div>
     </div>
 
-    <div class="mt-10">
-      <ParticipantsFilters
-        :participants="participants"
-        v-show="participants.length > 0"
-        class="mb-3"
-        v-model:selectedRegistrationNumber="filters.selectedRegistrationNumber"
-        v-model:selectedOrganisationName="filters.selectedOrganisationName"
-        v-model:selectedCountry="filters.selectedCountry"
-        v-model:selectedCity="filters.selectedCity"
-      />
-      <ParticipantsTable :participants="filteredParticipants" @view-participant="p => viewParticipant(p)" v-if="filteredParticipants.length > 0" />
-      <ParticipantDetails :participant="selectedParticipant" ref="details" />
-    </div>
+    <transition
+      enter-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+      enter-from-class="-translate-y-12 opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-12"
+    >
+      <div class="mt-12 mb-12" v-if="participants.length > 0">
+        <ParticipantsCharts :participants="participants" v-if="filteredParticipants.length > 0" class="mb-12" />
+        <ParticipantsFilters
+          :participants="participants"
+          class="mb-3"
+          v-model:selectedRegistrationNumber="filters.selectedRegistrationNumber"
+          v-model:selectedOrganisationName="filters.selectedOrganisationName"
+          v-model:selectedCountry="filters.selectedCountry"
+          v-model:selectedCity="filters.selectedCity"
+        />
+        <ParticipantsTable :participants="filteredParticipants" @view-participant="p => viewParticipant(p)" v-if="filteredParticipants.length > 0" />
+        <ParticipantDetails :participant="selectedParticipant" ref="details" />
+      </div>
+    </transition>
   </div>
 </template>

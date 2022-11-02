@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, toRefs, computed } from 'vue'
+import { toRefs, computed } from 'vue'
 import { ParticipantObject } from '../types/participant'
-import Combobox from './UI/Combobox.vue'
+import Combobox from '@utils/UI/Combobox.vue'
 
 const props = defineProps<{
   participants: ParticipantObject[],

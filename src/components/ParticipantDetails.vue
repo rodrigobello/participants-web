@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, toRefs } from 'vue'
 import { ParticipantObject } from '../types/participant'
-import SlideOver from './UI/SlideOver.vue'
+import SlideOver from '@utils/UI/SlideOver.vue'
 import moment from 'moment'
 
 const props = defineProps<{
