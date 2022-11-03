@@ -14,6 +14,6 @@ module.exports = {
   },
   env: {
     node: true,
-    vitest: true
+    jest: true,
   },
 };
