@@ -73,6 +73,7 @@ const cities = computed((): ComboboxItem[] => {
     class="flex flex-center px-4 grid grid-cols-1 sm:grid-cols-8 gap-x-4 lg:grid-cols-12"
   >
     <ComboBox
+      id="registration-numbers-combobox"
       ref="registration-numbers-combobox"
       label="Registration Number"
       :items="registrationNumbers"
@@ -87,6 +88,7 @@ const cities = computed((): ComboboxItem[] => {
       "
     />
     <ComboBox
+      id="organisation-names-combobox"
       ref="organisation-names-combobox"
       label="Organisation Name"
       :items="organisationNames"
@@ -101,6 +103,7 @@ const cities = computed((): ComboboxItem[] => {
       "
     />
     <ComboBox
+      id="countries-combobox"
       ref="countries-combobox"
       label="Country"
       :items="countries"
@@ -112,6 +115,7 @@ const cities = computed((): ComboboxItem[] => {
       "
     />
     <ComboBox
+      id="cities-combobox"
       ref="cities-combobox"
       label="City"
       :items="cities"

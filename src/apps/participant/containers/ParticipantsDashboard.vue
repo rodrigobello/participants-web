@@ -57,7 +57,7 @@ let viewParticipant = (participant: ParticipantDTO) => {
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-12"
     >
-      <div class="mt-12 mb-12" v-if="participants.length > 0">
+      <div class="mt-12 mb-12" v-if="participants.length > 0" id="participants-response">
         <ParticipantsCharts
           :participants="participants"
           v-if="participants.length > 0"

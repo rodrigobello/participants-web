@@ -2,9 +2,7 @@
 import { ref, computed } from "vue";
 import { ExclamationCircleIcon } from "@heroicons/vue/20/solid";
 
-const endpoint = ref<string>(
-  "https://data.sandbox.directory.openbankingbrasil.org.br/participants"
-);
+const endpoint = ref<string>("");
 const emit = defineEmits(["load"]);
 const onClick = () => {
   emit("load", endpoint.value);
@@ -49,7 +47,7 @@ const valid = computed(() =>
           <input
             type="text"
             name="endpoint"
-            data-testid="participants-api-input"
+            id="participants-api-input"
             :class="[
               {
                 'text-red-900 placeholder-red-300 border-red-300 focus:border-red-500 focus:ring-red-500 focus:outline-none':

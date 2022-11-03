@@ -29,11 +29,12 @@ defineExpose({
 </script>
 
 <template>
-  <SlideOver ref="slideOver">
+  <SlideOver ref="slideOver" id="participant-details">
     <template #title>
       <h3
         class="text-xl font-bold text-gray-900 sm:text-2xl"
         v-if="participant"
+        id="participant-details-title"
       >
         {{ participant.OrganisationName }}
         <span
