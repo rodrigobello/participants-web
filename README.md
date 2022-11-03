@@ -1,16 +1,40 @@
-# Vue 3 + TypeScript + Vite
+# Participants Dashboard
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+The application consists of a panel where the user can enter a specific endpoint `/participants` and view the response information, i.e., information about Open Banking Brasil participants registered on the company's directory platform.
 
-## Recommended IDE Setup
+### 👉  [Check the live demo here](https://rodrigobello.github.io/participants-web/)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Getting Started
 
-## Type Support For `.vue` Imports in TS
+### Running Locally
+```
+git clone git@github.com:rodrigobello/participants-web.git
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+yarn install
+yarn dev
+```
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+### Running Tests
+```
+yarn run test:unit 
+yarn run test:e2e
+```
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+### Deployment to GH Pages
+```
+yarn build
+git add dist -f
+git commit -m "..."
+git subtree push --prefix dist origin gh-pages
+```
+
+## Used libraries and frameworks
+
+- [Vue 3 + Typescript](https://vuejs.org/) + [Vite](https://vitejs.dev/)
+- [Pinia](https://pinia.vuejs.org/) for state management
+- [TailwindCSS](https://tailwindcss.com/) with components from [TailwindUI](https://tailwindui.com/) **(not open-source - check license section)**
+- [Vitest](https://vitest.dev/) and [Cypress](https://www.cypress.io/) for unit, components and e2e tests
+
+## License
+
+This project uses a commercial template and is therefore not licensed under any open-source license. Forking this project as a base for your own projects is not permitted under the license of the original template ([more information here](https://github.com/tailwindlabs/tailwindcss/discussions/8810)).
