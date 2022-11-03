@@ -5,6 +5,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: "/participants-web/",
   resolve: {
     alias: {
       "@participant": path.resolve(__dirname, "./src/apps/participant"),
