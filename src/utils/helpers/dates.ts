@@ -28,8 +28,10 @@ export const getIncrementalDatesArray = (
     .startOf("day")
     .diff(minDate.startOf("day"), "days");
   return [...Array(incrementalCount).keys()].map((i) => {
-    return moment(minDate)
-      .add((days / incrementalCount) * (i + 1), "days")
-      .toISOString();
+    const d = moment(minDate).add((days / incrementalCount) * (i + 1), "days");
+
+    return i == incrementalCount - 1
+      ? d.endOf("day").toISOString()
+      : d.toISOString();
   });
 };

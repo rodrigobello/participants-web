@@ -1,16 +1,24 @@
 import { ref, reactive, computed } from "vue";
 import { defineStore } from "pinia";
 import ParticipantDTO from "@participant/dto";
+import ParticipantsService from "@participant/services/ParticipantsService";
+
+export const participantsService: ParticipantsService =
+  new ParticipantsService();
 
 export const useParticipantStore = defineStore("participant", () => {
   const participants = ref<ParticipantDTO[]>([]);
   const isLoading = ref<boolean>(false);
 
-  const loadParticipants = async (endpoint: string) => {
+  const loadParticipants = async (
+    endpoint: string
+  ): Promise<ParticipantDTO[]> => {
     isLoading.value = true;
-    return fetch(endpoint)
-      .then(async (resp) => {
-        participants.value = await resp.json();
+    return participantsService
+      .loadFromAPI(endpoint)
+      .then(async (data) => {
+        participants.value = data;
+        return data;
       })
       .finally(() => (isLoading.value = false));
   };

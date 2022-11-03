@@ -65,6 +65,7 @@ const { participants } = toRefs(props);
           :key="participant.OrganisationId"
         >
           <td
+            data-testid="registration-number"
             :class="[
               participantIdx !== participants.length - 1
                 ? 'border-b border-gray-200'
@@ -75,6 +76,7 @@ const { participants } = toRefs(props);
             {{ participant.RegistrationNumber }}
           </td>
           <td
+            data-testid="organisation-name"
             :class="[
               participantIdx !== participants.length - 1
                 ? 'border-b border-gray-200'
@@ -85,6 +87,7 @@ const { participants } = toRefs(props);
             {{ participant.OrganisationName }}
           </td>
           <td
+            data-testid="country"
             :class="[
               participantIdx !== participants.length - 1
                 ? 'border-b border-gray-200'
@@ -95,6 +98,7 @@ const { participants } = toRefs(props);
             {{ participant.Country }}
           </td>
           <td
+            data-testid="city"
             :class="[
               participantIdx !== participants.length - 1
                 ? 'border-b border-gray-200'
@@ -105,6 +109,7 @@ const { participants } = toRefs(props);
             {{ participant.City }}
           </td>
           <td
+            data-testid="postcode"
             :class="[
               participantIdx !== participants.length - 1
                 ? 'border-b border-gray-200'
@@ -123,6 +128,7 @@ const { participants } = toRefs(props);
             ]"
           >
             <span
+              data-testid="status"
               class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800"
             >
               {{ participant.Status }}

@@ -18,7 +18,7 @@ const { isLoading, participants, filteredParticipants } = storeToRefs(store);
 const { loadParticipants, filters } = store;
 
 const notification = ref<typeof ErrorNotification | null>(null);
-const onInput = async (endpoint: string) => {
+const loadEndpoint = async (endpoint: string) => {
   loadParticipants(endpoint).catch((err: string) => {
     console.error(err);
     if (notification.value) {
@@ -43,7 +43,7 @@ let viewParticipant = (participant: ParticipantDTO) => {
 
 <template>
   <div>
-    <ParticipantsEndpointInput @input="onInput" />
+    <ParticipantsEndpointInput @load="loadEndpoint" />
     <ErrorNotification ref="notification" />
     <LoadingAnimation
       class="flex flex-center justify-center mt-20"

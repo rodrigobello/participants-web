@@ -5,9 +5,9 @@ import { ExclamationCircleIcon } from "@heroicons/vue/20/solid";
 const endpoint = ref<string>(
   "https://data.sandbox.directory.openbankingbrasil.org.br/participants"
 );
-const emit = defineEmits(["input"]);
+const emit = defineEmits(["load"]);
 const onClick = () => {
-  emit("input", endpoint.value);
+  emit("load", endpoint.value);
   endpoint.value = "";
 };
 
@@ -49,7 +49,7 @@ const valid = computed(() =>
           <input
             type="text"
             name="endpoint"
-            id="endpoint"
+            data-testid="participants-api-input"
             :class="[
               {
                 'text-red-900 placeholder-red-300 border-red-300 focus:border-red-500 focus:ring-red-500 focus:outline-none':
@@ -73,6 +73,7 @@ const valid = computed(() =>
           </div>
         </div>
         <button
+          id="load-participants-api"
           type="button"
           class="ml-4 rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           @click="onClick"

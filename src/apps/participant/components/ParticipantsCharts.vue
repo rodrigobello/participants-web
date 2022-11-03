@@ -88,6 +88,7 @@ const buildChartOptions = (title: string) => ({
   <div class="2xl:w-1/2 w-3/4 mx-auto">
     <div class="flex flex-center align-items-center justify-between">
       <BarChart
+        ref="participants-timeline-chart"
         :data="timeLineChartData"
         :options="
           buildChartOptions(
@@ -96,6 +97,7 @@ const buildChartOptions = (title: string) => ({
         "
       />
       <PieChart
+        ref="participants-countries-chart"
         :data="locationChartData"
         :options="
           buildChartOptions(

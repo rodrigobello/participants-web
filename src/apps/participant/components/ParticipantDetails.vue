@@ -99,7 +99,7 @@ defineExpose({
                 </div>
                 <div class="flex justify-between py-3 text-sm font-medium">
                   <dt class="text-gray-500">Created On</dt>
-                  <dd class="text-gray-900">
+                  <dd class="text-gray-900" data-testid="created-on">
                     {{
                       participant.CreatedOn
                         ? formatDate(participant.CreatedOn)
